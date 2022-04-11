@@ -1,0 +1,12 @@
+{
+    "rule":{
+        "namespace":"strategy",
+        "name":"test_exp_1496234234223400",
+        "version":0,
+        "last_modify_time":1434234236819000,
+        "log_rate":1023300,
+        "schema_version":"hello_world!"
+    },
+    "ip": "192.168.0.1",
+    "event": "你吗的"
+}
