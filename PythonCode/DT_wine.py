@@ -36,8 +36,7 @@ x_train, x_test, y_train, y_test = train_test_split(wines.data, wines.target, te
 print("训练集", x_train.shape)
 print("测试集", x_test.shape)
 
-print(x_test[0], y_test[0])
-clf = tree.DecisionTreeClassifier(criterion="entropy")  # 载入决策树分类模型
+clf = tree.DecisionTreeClassifier()  # 载入决策树分类模型
 clf = clf.fit(x_train, y_train)
 score = clf.score(x_test, y_test)
 print("准确度", score)
