@@ -15,7 +15,7 @@ pd.set_option('display.unicode.ambiguous_as_wide', True)
 pd.set_option('display.unicode.east_asian_width', True)
 
 #决策树模型
-tree_clf = DecisionTreeClassifier(criterion="entropy", max_depth=9)
+tree_clf = DecisionTreeClassifier(criterion="entropy", max_depth=10)
 
 #数据导入
 raw_data = pd.read_table('car_1000.txt', header=None, sep=',')    # txt使用table,csv使用csv
@@ -58,8 +58,8 @@ def show_metri(x_train, x_test, y_train, y_test):
     test_pred = tree_clf.predict(x_test)
     print('The accuracy of the Logistic Regression is:',metrics.accuracy_score(y_train,train_pred))
     print('The accuracy of the Logistic Regression is:',metrics.accuracy_score(y_test,test_pred))
-    print(test_pred)
-    print(y_test)
+    # print(test_pred)
+    # print(y_test)
     confusion_matrix_result = metrics.confusion_matrix(test_pred,y_test)
     print('The confusion matrix result:\n',confusion_matrix_result) 
 
@@ -69,12 +69,16 @@ def show_metri(x_train, x_test, y_train, y_test):
     plt.ylabel('True labels')
     plt.show()
 
-def k_cross_alidation():
+def k_cross_alidation(depth=10):
+    # tree_clf = DecisionTreeClassifier(criterion="entropy", max_depth=depth)
     data = train_data.iloc[:,0:6]
     target = train_data.iloc[:, 6]
     accuracy = []
-    kf = KFold(n_splits=10, shuffle=True) # shuffle表示是否打乱数据集,random_statae表示随机种子
-    for train_index, test_index in kf.split(data): 
+    '''
+        KFold的使用方法
+    '''
+    kf = KFold(n_splits=10, shuffle=True, random_state=44) # shuffle表示是否打乱数据集,random_state表示随机种子
+    for train_index, test_index in kf.split(data):         
         x_train, x_test = data.loc[train_index].to_numpy(), data.loc[test_index].to_numpy()
         y_train, y_test = target.loc[train_index].to_numpy(), target.loc[test_index].to_numpy()
         tree_clf.fit(x_train, y_train)
@@ -102,7 +106,8 @@ def main():
     pre_data()
     # data_show(train_data)
     # data_show(raw_data)
-
+    # for i in range(1,20):
+    #     print(f"*************深度：{i}************\n")
     k_cross_alidation()
     
 
