@@ -1,0 +1,3 @@
+[submodule "PythonCode/project/learn-more-python-the-hard-way-solutions"]
+	path = PythonCode/project/learn-more-python-the-hard-way-solutions
+	url = https://github.com/zedshaw/learn-more-python-the-hard-way-solutions.git
