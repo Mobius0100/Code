@@ -1,0 +1,17 @@
+{
+    "suiji.jpg": 
+    {
+      "center_ip": "192.168.1.1",
+      "box_ip": "192.168.1.2",
+      "video_ip": "192.168.0.184",
+      "time": "2022-01-01 12:00:00",
+      "event_type": "helmet",
+      "description": "2022-01-01 12:00:00，工地正门口，检测到有3人未戴安全帽",
+      "file_type": 0,
+      "file_name": "demo.jpg"
+    },
+    "suiji23.jpg":
+    {
+        "pic1":"json"
+    }
+}

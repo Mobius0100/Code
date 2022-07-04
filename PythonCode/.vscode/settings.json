@@ -1,4 +1,5 @@
 {
     "cmake.configureOnOpen": true,
-    "python.formatting.provider": "yapf"
+    "python.formatting.provider": "yapf",
+    "python.pythonPath": "/Users/lucifer/opt/anaconda3/envs/UnsupervisedL/bin/python3"
 }
