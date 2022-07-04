@@ -23,7 +23,8 @@ def parseJson(jsonFile):
 
       if(i['category'] in categorys):
         # 过滤截断、遮挡目标
-        flag = (i['attributes']['truncated'] or i['attributes']['occluded'])
+        #flag = (i['attributes']['truncated'] or i['attributes']['occluded'])
+        flag = (i['attributes']['truncated'])
         obj.append(int(i['box2d']['x1']))
         obj.append(int(i['box2d']['y1']))
         obj.append(int(i['box2d']['x2']))

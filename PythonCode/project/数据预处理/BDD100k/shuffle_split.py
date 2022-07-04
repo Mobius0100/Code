@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser()
 #xml文件的地址，根据自己的数据进行修改 xml一般存放在Annotations下
 parser.add_argument('--xml_path', default='/Users/lucifer/Downloads/DataSet/BDD100K/Labels', type=str, help='input xml label path')
 #数据集的划分，地址选择自己数据下的ImageSets/Main
-parser.add_argument('--txt_path', default='/Users/lucifer/Downloads/DataSet/BDD100K/data_split', type=str, help='output txt label path')
+parser.add_argument('--txt_path', default='/Users/lucifer/Downloads/DataSet/BDD100K/data_split/ALL_Pic', type=str, help='output txt label path')
 opt = parser.parse_args()
 
 trainval_percent = 1

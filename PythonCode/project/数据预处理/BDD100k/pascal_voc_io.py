@@ -46,11 +46,11 @@ class PascalVocWriter:
           生成一个VOC格式的xml，返回一个xml的根标签，以<annotation>开始
         """
         # Check conditions
-        if self.filename is None or \
-                self.foldername is None or \
-                self.imgSize is None or \
-                len(self.boxlist) <= 0:
-            return None
+        # if self.filename is None or \
+        #         self.foldername is None or \
+        #         self.imgSize is None or \
+        #         len(self.boxlist) <= 0:
+        #     return None
 
         top = Element('annotation') # 创建一个根标签<annotation>
         folder = SubElement(top, 'folder')  # 在根标签<annotation>下创建一个子标签<folder>
@@ -131,8 +131,8 @@ class PascalVocWriter:
         self.appendObjects(root)
         out_file = None
         subdir = self.foldername.split('/')[-1]
-        if not os.path.isdir(subdir):
-            os.mkdir(subdir)
+        # if not os.path.isdir(subdir):
+        #     os.mkdir(subdir)
         if targetFile is None:
             with open(self.foldername+'/'+self.filename + '.xml', 'w') as out_file:
                 prettifyResult = self.prettify(root)

@@ -1,4 +1,5 @@
 import json
+import os
 
 categorys = ['car', 'bus', 'person', 'truck']
 
@@ -14,5 +15,8 @@ def parseJson(jsonfile):
         flag = i['attributes']['truncated']
         print(flag)
         print(cnt)
+    
+    for root, dirs, files in os.walk("/Users/lucifer/Code/PythonCode/project"):
+        print(f"root:{root}; dirs:{dirs}; files:{files}\n")
 
 parseJson('/Users/lucifer/Code/PythonCode/test.json')
